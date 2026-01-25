@@ -23,9 +23,7 @@ class DataIngestion():
         logging.info("Entered data ingestion method or component")
 
         try:
-            # Get the correct path to the data file relative to project root
-            data_file_path = os.path.join(os.path.dirname(__file__), '../../notebook/data/stud.csv')
-            df=pd.read_csv(data_file_path)
+            df =pd.read_csv('notebook/data/stud.csv')
             logging.info("read the dataset as dataframe")
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True)
