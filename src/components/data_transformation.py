@@ -122,7 +122,7 @@ class DataTransformation:
             binary_pipeline=Pipeline(
                 steps=[
                     ("imputer",SimpleImputer(strategy="most_frequent")),
-                    ("one_hot_encoder",OneHotEncoder(drop="if_binary"))
+                    ("one_hot_encoder",OneHotEncoder(drop="if_binary",handle_unknown="ignore"))
                 ]
             )
 
@@ -134,7 +134,7 @@ class DataTransformation:
             ordinal_pipeline=Pipeline(
                 steps=[
                     ("imputer",SimpleImputer(strategy="most_frequent")),
-                    ("ordinal",OrdinalEncoder())
+                    ("ordinal",OrdinalEncoder(handle_unknown="use_encoded_value",unknown_value=-1))
                 ]
             )
 
