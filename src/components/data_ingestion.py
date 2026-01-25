@@ -6,6 +6,7 @@ from dataclasses import dataclass
 import os
 import sys
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
 
 @dataclass
 class DataIngestionConfig:
@@ -52,5 +53,10 @@ if __name__=="__main__":
 
     obj2=DataTransformation()
     train_arr,test_arr,preprocessor=obj2.initiate_data_transformation(train_data,test_data)
+
+    model_obj=ModelTrainer()
+    best_r2_score=model_obj.initiate_model_trainer(train_arr,test_arr)
+
+    print("Best r2 score after training completed is: ",best_r2_score)
 
                     
