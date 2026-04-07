@@ -23,6 +23,12 @@ exc_info() gets info about the current exception:
 _ → type of exception (we ignore it)
 _ → value of exception (we ignore it)
 exc_tb → traceback object (where the error happened)
+| Part          | Meaning                    |
+| ------------- | -------------------------- |
+| `exc_tb.tb_frame`    | returns frame where error occurred |
+| `exc_tb.f_code`      | returns code object                |
+| `exc_tb.co_filename` | returns name of the python file where error occured    |
+
 file_name → gets the name of the file where the error occurred
 exc_tb.tb_lineno → gets the line number of the error
 error_message → combines file name, line number, and actual error into a nice readable message

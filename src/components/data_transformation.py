@@ -77,7 +77,7 @@ class DataTransformation:
             ordinal_cols=[]
             multi_cat_cols=[]
 
-            #Simple heuristic:
+            #Simple logic:
             # If only 2 unique values -> binary
             # If <= 5 unique values -> ordinal-like
             # else -> general categorical

@@ -48,7 +48,6 @@ def evaluate_models(X_train,y_train,X_test,y_test,models,param):
                 param_grid=param[model_name],
                 cv=3,
                 n_jobs=-1,
-                verbose=0
             )
 
             grid.fit(X_train,y_train)
